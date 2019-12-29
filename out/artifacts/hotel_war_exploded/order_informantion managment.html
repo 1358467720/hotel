@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账单信息管理</title>
+    <style>
+        body{
+            background-color: rgb(202,240,211);
+        }
+        .warp{
+            width: 700px;
+            height: 650px;
+            margin:50px auto;
+            background-color: white;
+        }
+        .border{
+            border: black solid 1px;
+            border-radius: 2px;
+            text-align: center;
+        }
+        .border li{
+            list-style: none;
+        }
+        #sucu{
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="warp">
+    <div class="border">
+        查询账单信息
+        <form>
+            <ul>
+                <li> 用户编号   : <input type="text"></li>
+                <li><input type="submit"> </li>
+            </ul>
+
+        </form>
+
+    </div>
+    <div class="border" id="sucu">
+        用于输出
+
+    </div>
+
+</div>
+</body>
+</html>

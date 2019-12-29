@@ -33,11 +33,11 @@ public class LoginServlet extends HttpServlet {
         if (admin == null) {
             //登录失败
             response.setStatus(302);
-            response.setHeader("location","/2.html");
+            response.setHeader("location","/login_failed.html");
 
         }else{
             response.setStatus(302);
-            response.setHeader("location","/1.html");
+            response.setHeader("location","/admin_business.html");
         }
 
     }
