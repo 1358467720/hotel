@@ -20,8 +20,9 @@
             color: initial;
         }
         #but1{
-            height: 30px;
-            width: 70px;
+            height: 40px;
+            width: 100px;
+            color: white;
             border: none;
             font-family: 方正综艺简体;
             border-radius: 5px;
@@ -29,9 +30,23 @@
             padding-right: 10px;
             text-align: center;
             background-color: red;
+            animation: A 1.5s;
+            animation-fill-mode: forwards;
+            transition-timing-function: inherit;
+        }
+        @keyframes A {
+            0%{
+                opacity: 0%;
+                transform: translate3d(0,0,0);
+            }
+            100%{
+                opacity: 100%;
+                transform: translate3d(0,60px,0);
+            }
+
         }
         h1{
-            margin-bottom: 20px;
+            margin-bottom: 50px;
         }
     </style>
 </head>
@@ -50,15 +65,6 @@
             <div class="login">
 
                 <h1>登陆 失败</h1>
-<!--                <input type="button" value="我是一个按钮"-->
-<!--                       οnclick="javascrtpt:window.location.href='http://blog.sina.com.cn/mleavs'" id="fanhui">-->
-<!--            </div>-->
-<!--            <script>-->
-<!--                -->
-<!--                function jump(){-->
-<!--                    window.location.href="http://blog.sina.com.cn/mleavs";-->
-<!--                }-->
-<!--            </script>-->
                 <div class="fan">
                     <a href="admin_login.html">
                         <button id="but1">返回</button>
