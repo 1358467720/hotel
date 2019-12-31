@@ -1,5 +1,4 @@
 
-
 <!doctype html>
 <html lang="en">
 <title>住宿信息管理</title>
@@ -78,8 +77,10 @@
             height: auto;
         }
         #gai{
-            margin-top: 100px;
+            margin-top: 50px;
         }
+
+
     </style>
 </head>
 <body>
@@ -95,45 +96,56 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="login">
-                <h3>增加房间</h3>
-                        <form>
-                            <ul>
-                                <li><input type="text" name="account" class="form-control"placeholder="房间编号"></li>
-                                <li><input type="text" name="account" class="form-control" placeholder="房间类型"></li>
-                                <li><input type="text" name="account" class="form-control"placeholder="房间价格"></li>
-                                <li class="li_last"><input type="submit" class="but"> </li>
-                            </ul>
-
-                        </form>
-                <div class="out">
-
-                </div>
-                <h3>删除/查询 房间</h3>
-                <form>
+                <h3>增加用户信息</h3>
+                <form action="/InsertUserServlet">
                     <ul>
-                        <li><input type="text" name="account" class="form-control"placeholder="房间编号"></li>
-                        <li class="folat"><input type="submit" class="but" id="but" value="删除"> </li>
-                        <li class="folat1"><input type="submit" class="but"  value="查询"> </li>
-                    </ul>
-
-                </form>
-                <div class="out" id="gai">
-
-                </div>
-                <h3 class="top">修改 房间</h3>
-                <form>
-                    <ul>
-                        <li><input type="text" name="account" class="form-control"placeholder="房间编号"></li>
-                        <li><input type="text" name="account" class="form-control"placeholder="修改房间编号"></li>
-                        <li><input type="text" name="account" class="form-control" placeholder="修改房间类型"></li>
-                        <li><input type="text" name="account" class="form-control"placeholder="修改房间价格"></li>
+                        <li><input type="text" name="account" class="form-control"placeholder="账号"></li>
+                        <li><input type="text" name="password" class="form-control" placeholder="密码"></li>
+                        <li><input type="text" name="name" class="form-control"placeholder="姓名"></li>
+                        <li><input type="radio" class="sex" value="男" name="sex"> 男   <input type="radio" class="sex" value="女" name="sex"> 女</li>
+                        <li><input type="text" name="IDNum" class="form-control"placeholder="身份证"></li>
+                        <li><input type="text" name="phoneNum" class="form-control"placeholder="联系电话"></li>
                         <li class="li_last"><input type="submit" class="but"> </li>
                     </ul>
 
                 </form>
-                <div class="out">
+<!--                <div class="out">-->
+
+<!--                </div>-->
+                <h3>删除 用户</h3>
+                <form action="/DeleteUserServlet">
+                    <ul>
+                        <li><input type="text" name="account" class="form-control"placeholder="账号"></li>
+                        <li ><input type="submit" class="but" id="but" value="删除"> </li>
+                    </ul>
+
+                </form>
+
+                <h3>查询 用户</h3>
+                <form action="/">
+                    <ul>
+                        <li><input type="text" name="account" class="form-control"placeholder="账号"></li>
+                        <li ><input type="submit" class="but"  value="查询"> </li>
+                    </ul>
+                </form>
+                <div class="out" id="gai">
 
                 </div>
+
+                <h3 class="top">修改 用户</h3>
+                <form  action="/UpdateUserServlet">
+                    <ul>
+                        <li><input type="text" name="account" class="form-control"placeholder="账号"></li>
+<!--                        <li><input type="text" name="account" class="form-control"placeholder="修改账号"></li>-->
+                        <li><input type="text" name="password" class="form-control" placeholder="修改密码"></li>
+                        <li><input type="text" name="name" class="form-control"placeholder="修改姓名"></li>
+                        <li><input type="radio" value="男" name="sex">男  <input type="radio"value="女" name="sex">女</li>
+                        <li><input type="text" name="phoneNum" class="form-control"placeholder="修改电话"></li>
+                        <li><input type="text" name="IDNum"class="form-control"placeholder="修改身份证"></li>
+                        <li class="li_last"><input type="submit" class="but"> </li>
+                    </ul>
+
+                </form>
 
 
             </div>

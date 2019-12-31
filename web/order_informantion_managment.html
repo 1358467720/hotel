@@ -1,7 +1,57 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>账单信息管理</title>-->
+<!--    <style>-->
+<!--        body{-->
+<!--            background-color: rgb(202,240,211);-->
+<!--        }-->
+<!--        .warp{-->
+<!--            width: 700px;-->
+<!--            height: 650px;-->
+<!--            margin:50px auto;-->
+<!--            background-color: white;-->
+<!--        }-->
+<!--        .border{-->
+<!--            border: black solid 1px;-->
+<!--            border-radius: 2px;-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        .border li{-->
+<!--            list-style: none;-->
+<!--        }-->
+<!--        #sucu{-->
+<!--            height: 100px;-->
+<!--        }-->
+
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="warp">-->
+<!--    <div class="border">-->
+<!--        查询账单信息-->
+<!--        <form>-->
+<!--            <ul>-->
+<!--                <li> 用户编号   : <input type="text"></li>-->
+<!--                <li><input type="submit"> </li>-->
+<!--            </ul>-->
+
+<!--        </form>-->
+
+<!--    </div>-->
+<!--    <div class="border" id="sucu">-->
+<!--        用于输出-->
+
+<!--    </div>-->
+
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
 
 <!doctype html>
 <html lang="en">
-<title>自我管理</title>
+<title>账单信息管理</title>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -56,15 +106,11 @@
             margin-left: 50%;
         }
         .out{
-            margin-top: 40px;
+            margin-top: 50px;
             margin-left: 10%;
-            margin-bottom: 40px;
             width: 80%;
             border: rgba(153, 153, 153, 0.63) solid 2px;
-            height: 100px;
-        }
-        .login{
-            height: auto;
+            height: 40%;
         }
     </style>
 </head>
@@ -81,12 +127,10 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="login">
-                <h3>修改管理员信息</h3>
+                <h3>查询账单</h3>
                 <form>
                     <ul>
-                        <li> <input type="text" name="account" class="form-control" placeholder="管理员账号"></li>
-<!--                        <li> <input type="text" name="account" class="form-control" placeholder="修改管理员账号"></li>-->
-                        <li> <input type="text" name="account" class="form-control" placeholder="修改管理员密码"></li>
+                        <li> <input type="text" name="account" class="form-control" placeholder="用户编号"></li>
                         <li ><input type="submit" class="but" value="查询"> </li>
                     </ul>
 
