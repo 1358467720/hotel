@@ -1,7 +1,9 @@
 package cn.hotal.web.servlet;
 
 import cn.hotal.bean.Admin;
+import cn.hotal.bean.User;
 import cn.hotal.dao.AdminDao;
+import cn.hotal.dao.UserDao;
 import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
@@ -13,36 +15,35 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/InsertUserServlet")
+public class InsertUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
 
         Map<String, String[]> map = request.getParameterMap();
-        Admin loginAdmin = new Admin();
+        User insertUser = new User();
         try {
-            BeanUtils.populate(loginAdmin,map);
+            BeanUtils.populate(insertUser,map);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
 
-        Admin admin = AdminDao.login(loginAdmin);
+        int i = UserDao.insertUser(insertUser);//插入数据库，成功为1，失败为0
 
-        if (admin == null) {
-            //登录失败
-            response.setStatus(302);
-            response.setHeader("location","/login_failed.html");
+        if (i == 1) {
+            //插入成功
+            response.sendRedirect("/insert_user_success.html");
 
         }else{
-            response.setStatus(302);
-            response.setHeader("location","/admin_business.html");
+            //插入失败
+            response.sendRedirect("/insert_user_failed.html");
         }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.doPost(request,response);
+        this.doPost(request, response);
     }
 }
