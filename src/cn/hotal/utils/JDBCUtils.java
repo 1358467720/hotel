@@ -6,7 +6,9 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 
 public class JDBCUtils {
@@ -36,5 +38,32 @@ public class JDBCUtils {
     //获取数据库连接对象
     public static Connection getConnection() throws SQLException {
         return ds.getConnection();
+    }
+    public static void close(Statement stmt, Connection conn){
+        close(null,stmt,conn);
+    }
+
+    public static void close(ResultSet rs, Statement stmt, Connection conn) {
+        if(rs != null){
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if(stmt != null){
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if(conn != null){
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

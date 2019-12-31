@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<title>管理员业务</title>
+<title>删除失败</title>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,36 +8,45 @@
     <link rel="stylesheet" type="text/css"  href="css/styles.css">
     <link >
     <style>
+        .bg-img{
+            background-image: url("images/bg-image.jpeg");
+            background-size: cover;
+        }
         a {
             -webkit-appearance: button;
             -moz-appearance: button;
-            border-radius: 50px;
 
             text-decoration: none;
             color: initial;
-            width: 75%;
-            margin-bottom: 6%;
         }
-        button{
-            width: 100%;
-            height: 50px;
-            border-radius: 50px;
-            box-shadow: none;
-            border: #999999 2px  solid;
-            background-color: rgb(202,240,211);
-            font-family: 思源宋体;
-            animation: B 2s;
+        #but1{
+            height: 40px;
+            width: 100px;
+            color: white;
+            border: none;
+            font-family: 方正综艺简体;
+            border-radius: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            background-color: rgb(178, 1, 15);
+            animation: A 1.5s;
             animation-fill-mode: forwards;
-
+            transition-timing-function: inherit;
         }
-        @keyframes B{
+        @keyframes A {
             0%{
-                width: 40%;
+                opacity: 0%;
+                transform: translate3d(0,0,0);
             }
             100%{
-                width: 100%;
+                opacity: 100%;
+                transform: translate3d(0,60px,0);
             }
 
+        }
+        h1{
+            margin-bottom: 50px;
         }
     </style>
 </head>
@@ -55,31 +64,21 @@
         <div class="col-lg-8">
             <div class="login">
 
-                    <a href="Accommodation_Management.html">
-                        <button >住宿信息管理</button>
-                    </a>
-
-
-                    <a href="Room_Information_Management.html">
-                        <button> 房间信息管理</button>
-                    </a>
-
-
+                <h1>删除 失败</h1>
+                <div class="fan">
                     <a href="User_Information_Management.html">
-                        <button>用户信息管理</button>
+                        <button id="but1">返回</button>
+
+
+
                     </a>
-
-
-                    <a href="order_informantion_managment.html">
-                        <button>账单信息管理</button>
-                    </a>
-
-
-                    <a href="admin_management.html">
-                        <button>自我管理</button>
-                    </a>
-
+                </div>
             </div>
+
+
         </div>
     </div>
 </div>
+
+</body>
+</html>

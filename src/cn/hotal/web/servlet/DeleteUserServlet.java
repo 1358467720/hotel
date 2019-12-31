@@ -1,3 +1,4 @@
+
 package cn.hotal.web.servlet;
 
 import cn.hotal.bean.User;
@@ -44,3 +45,4 @@ public class DeleteUserServlet extends HttpServlet {
         this.doPost(request, response);
     }
 }
+

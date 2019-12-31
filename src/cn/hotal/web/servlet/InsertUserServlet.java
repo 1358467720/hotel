@@ -1,3 +1,4 @@
+
 package cn.hotal.web.servlet;
 
 import cn.hotal.bean.Admin;
@@ -47,3 +48,4 @@ public class InsertUserServlet extends HttpServlet {
         this.doPost(request, response);
     }
 }
+
