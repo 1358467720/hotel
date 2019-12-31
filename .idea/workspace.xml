@@ -196,7 +196,7 @@
       <workItem from="1577760732190" duration="30000" />
       <workItem from="1577776411945" duration="644000" />
       <workItem from="1577798804635" duration="2844000" />
-      <workItem from="1577801691701" duration="7509000" />
+      <workItem from="1577801691701" duration="8011000" />
     </task>
     <servers />
   </component>
@@ -310,12 +310,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/hotal/web/servlet/InsertUserServlet.java</url>
-          <line>32</line>
+          <line>33</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/hotal/web/servlet/DeleteUserServlet.java</url>
-          <line>30</line>
+          <line>78</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
