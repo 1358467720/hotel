@@ -1,3 +1,4 @@
+
 package cn.hotal.web.servlet;
 
 import cn.hotal.bean.Admin;
@@ -46,3 +47,4 @@ public class LoginServlet extends HttpServlet {
         this.doPost(request,response);
     }
 }
+

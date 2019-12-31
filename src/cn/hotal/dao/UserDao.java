@@ -1,3 +1,4 @@
+
 package cn.hotal.dao;
 
 import cn.hotal.bean.User;
@@ -68,3 +69,4 @@ public class UserDao {
         }
     }
 }
+

@@ -1,3 +1,4 @@
+
 package cn.hotal.bean;
 
 public class User {
