@@ -46,6 +46,32 @@
             margin-bottom: 20px;
             font-family: 微软雅黑;
         }
+        #but1{
+            height: 40px;
+            width: 100px;
+            color: white;
+            border: none;
+            font-family: 方正综艺简体;
+            border-radius: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            background-color: red;
+            animation: A 1.5s;
+            animation-fill-mode: forwards;
+            transition-timing-function: inherit;
+        }
+        @keyframes A {
+            0%{
+                opacity: 0%;
+                transform: translate3d(0,0,0);
+            }
+            100%{
+                opacity: 100%;
+                transform: translate3d(0,60px,0);
+            }
+
+        }
         .but{
             height: 40px;
             width: 100px;
@@ -121,12 +147,13 @@
             <div class="login">
                 <div class="out">
                     <ul>
-                        <li class="top">account:<%=map.get("account")%></li>
-                        <li>password:<%=map.get("password")%></li>
-                        <li>name:<%=map.get("name")%></li>
-                        <li>sex:<%=map.get("sex")%></li>
-                        <li>phoneNum:<%=map.get("phoneNum")%></li>
-                        <li>IDNum:<%=map.get("IDNum")%></li>
+                        <li class="top">账号:<%=map.get("account")%></li>
+                        <li>密码:<%=map.get("password")%></li>
+                        <li>姓名:<%=map.get("name")%></li>
+                        <li>性别:<%=map.get("sex")%></li>
+                        <li>手机号码:<%=map.get("phoneNum")%></li>
+                        <li>身份证号码:<%=map.get("IDNum")%></li>
+                        <li><button id="but1">返回</button></li>
                     </ul>
                 </div>
 
