@@ -153,8 +153,12 @@
                         <li>性别:<%=map.get("sex")%></li>
                         <li>手机号码:<%=map.get("phoneNum")%></li>
                         <li>身份证号码:<%=map.get("IDNum")%></li>
-                        <li><button id="but1">返回</button></li>
                     </ul>
+                </div>
+                <div class="fan">
+                    <a href="admin_login.html">
+                        <button id="but1">返回</button>
+                    </a>
                 </div>
 
 
