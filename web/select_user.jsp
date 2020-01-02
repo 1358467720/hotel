@@ -1,6 +1,7 @@
 <%@ page import="org.springframework.jdbc.core.JdbcTemplate" %>
 <%@ page import="cn.hotal.utils.JDBCUtils" %>
-<%@ page import="java.util.Map" %><%--
+<%@ page import="java.util.Map" %>
+<%@ page import="org.springframework.dao.DataAccessException" %><%--
   Created by IntelliJ IDEA.
   User: songHat
   Date: 2020/1/2
@@ -68,7 +69,7 @@
             }
             100%{
                 opacity: 100%;
-                transform: translate3d(0,60px,0);
+                transform: translate3d(0,40px,0);
             }
 
         }
@@ -131,7 +132,12 @@
     JdbcTemplate jdbcTemplate = new JdbcTemplate(JDBCUtils.getDataSouce());
 
     String sql = "select * from Huser where account = ?";
-    Map<String, Object> map = jdbcTemplate.queryForMap(sql,account);
+    Map<String, Object> map = null;
+    try {
+        map = jdbcTemplate.queryForMap(sql,account);
+    } catch (DataAccessException e) {
+        response.sendRedirect("/select_user_failed.html");
+    }
 %>
 
 
@@ -153,12 +159,13 @@
                         <li>性别:<%=map.get("sex")%></li>
                         <li>手机号码:<%=map.get("phoneNum")%></li>
                         <li>身份证号码:<%=map.get("IDNum")%></li>
+                        <div class="fan">
+                            <a href="User_Information_Management.html">
+                                <button id="but1">返回</button>
+                            </a>
+                        </div>
+
                     </ul>
-                </div>
-                <div class="fan">
-                    <a href="admin_login.html">
-                        <button id="but1">返回</button>
-                    </a>
                 </div>
 
 
