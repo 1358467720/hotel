@@ -1,3 +1,4 @@
+
 <%@ page import="org.springframework.jdbc.core.JdbcTemplate" %>
 <%@ page import="cn.hotal.utils.JDBCUtils" %>
 <%@ page import="java.util.Map" %>
@@ -24,7 +25,7 @@
         map = jdbcTemplate.queryForMap(sql,account);
     } catch (DataAccessException e) {
         e.printStackTrace();
-        out.write("用户不存在，请重试！");
+        out.write("未存在该用户，请重试!");
     }
 %>
 
@@ -33,3 +34,4 @@
 <P>name:<%=map.get("name")%></P>
 </body>
 </html>
+
