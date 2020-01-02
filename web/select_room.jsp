@@ -1,4 +1,16 @@
+<%@ page import="org.springframework.jdbc.core.JdbcTemplate" %>
+<%@ page import="cn.hotal.utils.JDBCUtils" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="org.springframework.dao.DataAccessException" %><%--
+  Created by IntelliJ IDEA.
+  User: songHat
+  Date: 2020/1/2
+  Time: 16:26
+  To change this template use File | Settings | File Templates.
+--%>
 
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
 <!doctype html>
@@ -33,6 +45,33 @@
         li{
             list-style: none;
             margin-bottom: 20px;
+            font-family: 微软雅黑;
+        }
+        #but1{
+            height: 40px;
+            width: 100px;
+            color: white;
+            border: none;
+            font-family: 方正综艺简体;
+            border-radius: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            background-color: red;
+            animation: A 1.5s;
+            animation-fill-mode: forwards;
+            transition-timing-function: inherit;
+        }
+        @keyframes A {
+            0%{
+                opacity: 0%;
+                transform: translate3d(0,0,0);
+            }
+            100%{
+                opacity: 100%;
+                transform: translate3d(0,40px,0);
+            }
+
         }
         .but{
             height: 40px;
@@ -67,7 +106,7 @@
             margin-bottom: 20px;
             width: 80%;
             border: rgba(153, 153, 153, 0.63) solid 2px;
-            height: 100px;
+            height: 400px;
         }
         #whith{
             width: 50%;
@@ -76,14 +115,31 @@
             /*width: 50%;*/
         }
         .login{
-            height: auto;
         }
         #gai{
-            margin-top: 100px;
+            margin-top: 50px;
         }
+        .top{
+            margin-top: 40px;
+        }
+
+
     </style>
 </head>
 <body>
+<%
+    String id = request.getParameter("id");
+    JdbcTemplate jdbcTemplate = new JdbcTemplate(JDBCUtils.getDataSouce());
+
+    String sql = "select * from room where rno = ?";
+    Map<String, Object> map = null;
+    try {
+        map = jdbcTemplate.queryForMap(sql,id);
+    } catch (DataAccessException e) {
+        response.sendRedirect("/select_room_failed.html");
+        return;
+    }
+%>
 
 
 <div id="login-bg" class="container-fluid">
@@ -96,48 +152,24 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="login">
-                <h3>增加房间</h3>
-                        <form action="/InsertRoomServlet" method="post">
-                            <ul>
-                                <li><input type="text" name="id" class="form-control"placeholder="房间编号"></li>
-                                <li><input type="text" name="price" class="form-control" placeholder="房间价格"></li>
-                                <li><input type="text" name="roomType" class="form-control"placeholder="房间类型"></li>
-                                <li class="li_last"><input type="submit" class="but"> </li>
-                            </ul>
-
-                        </form>
-                <h3>删除 房间</h3>
-                <form action="/DeleteRoomServlet" method="post">
+                <div class="out">
                     <ul>
-                        <li><input type="text" name="id" class="form-control"placeholder="房间编号"></li>
-                        <li ><input type="submit" class="but" id="but" value="删除"> </li>
-                    </ul>
+                        <li class="top">编号：<%=map.get("rno")%></li>
+                        <li>价格：<%=map.get("price")%></li>
+                        <li>类型：<%=map.get("roomType")%></li>
+                        <div class="fan">
+                            <a href="Room_Information_Management.html">
+                                <button id="but1">返回</button>
+                            </a>
+                        </div>
 
-                </form>
-                <h3>查询 房间</h3>
-                <form action="/select_room.jsp" method="post">
-                    <ul>
-                        <li><input type="text" name="id" class="form-control"placeholder="房间编号"></li>
-                        <li ><input type="submit" class="but"  value="查询"> </li>
                     </ul>
-
-                </form>
-                <h3 class="top">修改 房间</h3>
-                <form action="/UpdateRoomServlet" method="post">
-                    <ul>
-                        <li><input type="text" name="id" class="form-control"placeholder="房间编号"></li>
-                        <li><input type="text" name="price" class="form-control" placeholder="修改房间价格"></li>
-                        <li><input type="text" name="roomType" class="form-control"placeholder="修改房间类型"></li>
-                        <li class="li_last"><input type="submit" class="but"> </li>
-                    </ul>
-
-                </form>
+                </div>
 
 
             </div>
         </div>
     </div>
-
 </div>
 </body>
 </html>

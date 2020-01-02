@@ -137,6 +137,7 @@
         map = jdbcTemplate.queryForMap(sql,account);
     } catch (DataAccessException e) {
         response.sendRedirect("/select_user_failed.html");
+        return;
     }
 %>
 

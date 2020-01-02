@@ -1,7 +1,9 @@
 
 package cn.hotal.web.servlet;
 
+import cn.hotal.bean.Room;
 import cn.hotal.bean.User;
+import cn.hotal.dao.RoomDao;
 import cn.hotal.dao.UserDao;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -14,30 +16,30 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
-@WebServlet("/UpdateAdminServlet")
-public class UpdateUserServlet extends HttpServlet {
+@WebServlet("/UpdateRoomServlet")
+public class UpdateRoomServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
 
         Map<String, String[]> map = request.getParameterMap();
-        User updatetUser = new User();
+        Room updatetRoom = new Room();
         try {
-            BeanUtils.populate(updatetUser,map);
+            BeanUtils.populate(updatetRoom,map);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
 
-        int i = UserDao.updateUser(updatetUser);//更新数据库，成功为1，失败为0
+        int i = RoomDao.updateRoom(updatetRoom);
 
         if (i == 1) {
             //更新成功
-            response.sendRedirect("/update_user_success.html");
+            response.sendRedirect("/update_room_success.html");
 
         }else{
             //更新失败
-            response.sendRedirect("/update_user_failed.html");
+            response.sendRedirect("/update_room_failed.html");
         }
     }
 

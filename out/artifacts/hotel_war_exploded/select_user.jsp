@@ -1,6 +1,7 @@
 <%@ page import="org.springframework.jdbc.core.JdbcTemplate" %>
 <%@ page import="cn.hotal.utils.JDBCUtils" %>
-<%@ page import="java.util.Map" %><%--
+<%@ page import="java.util.Map" %>
+<%@ page import="org.springframework.dao.DataAccessException" %><%--
   Created by IntelliJ IDEA.
   User: songHat
   Date: 2020/1/2
@@ -131,7 +132,13 @@
     JdbcTemplate jdbcTemplate = new JdbcTemplate(JDBCUtils.getDataSouce());
 
     String sql = "select * from Huser where account = ?";
-    Map<String, Object> map = jdbcTemplate.queryForMap(sql,account);
+    Map<String, Object> map = null;
+    try {
+        map = jdbcTemplate.queryForMap(sql,account);
+    } catch (DataAccessException e) {
+        response.sendRedirect("/select_user_failed.html");
+        return;
+    }
 %>
 
 
