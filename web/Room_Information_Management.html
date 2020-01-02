@@ -97,44 +97,41 @@
         <div class="col-lg-8">
             <div class="login">
                 <h3>增加房间</h3>
-                        <form>
+                        <form action="/InsertRoomServlet" method="post">
                             <ul>
-                                <li><input type="text" name="account" class="form-control"placeholder="房间编号"></li>
-                                <li><input type="text" name="account" class="form-control" placeholder="房间类型"></li>
-                                <li><input type="text" name="account" class="form-control"placeholder="房间价格"></li>
+                                <li><input type="text" name="id" class="form-control"placeholder="房间编号"></li>
+                                <li><input type="text" name="price" class="form-control" placeholder="房间类型"></li>
+                                <li><input type="text" name="roomType" class="form-control"placeholder="房间价格"></li>
                                 <li class="li_last"><input type="submit" class="but"> </li>
                             </ul>
 
                         </form>
-                <div class="out">
-
-                </div>
-                <h3>删除/查询 房间</h3>
-                <form>
+                <h3>删除 房间</h3>
+                <form action="/DeleteRoomServlet" method="post">
                     <ul>
-                        <li><input type="text" name="account" class="form-control"placeholder="房间编号"></li>
-                        <li class="folat"><input type="submit" class="but" id="but" value="删除"> </li>
-                        <li class="folat1"><input type="submit" class="but"  value="查询"> </li>
+                        <li><input type="text" name="id" class="form-control"placeholder="房间编号"></li>
+                        <li ><input type="submit" class="but" id="but" value="删除"> </li>
                     </ul>
 
                 </form>
-                <div class="out" id="gai">
-
-                </div>
-                <h3 class="top">修改 房间</h3>
-                <form>
+                <h3>查询 房间</h3>
+                <form action="/select_room.jsp" method="post">
                     <ul>
-                        <li><input type="text" name="account" class="form-control"placeholder="房间编号"></li>
-                        <li><input type="text" name="account" class="form-control"placeholder="修改房间编号"></li>
-                        <li><input type="text" name="account" class="form-control" placeholder="修改房间类型"></li>
-                        <li><input type="text" name="account" class="form-control"placeholder="修改房间价格"></li>
+                        <li><input type="text" name="id" class="form-control"placeholder="房间编号"></li>
+                        <li ><input type="submit" class="but"  value="查询"> </li>
+                    </ul>
+
+                </form>
+                <h3 class="top">修改 房间</h3>
+                <form action="/UpdateRoomServlet" method="post">
+                    <ul>
+                        <li><input type="text" name="id" class="form-control"placeholder="房间编号"></li>
+                        <li><input type="text" name="price" class="form-control" placeholder="修改房间类型"></li>
+                        <li><input type="text" name="roomType" class="form-control"placeholder="修改房间价格"></li>
                         <li class="li_last"><input type="submit" class="but"> </li>
                     </ul>
 
                 </form>
-                <div class="out">
-
-                </div>
 
 
             </div>
