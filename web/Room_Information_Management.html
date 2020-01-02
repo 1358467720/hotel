@@ -22,7 +22,7 @@
             text-decoration: none;
             color: initial;
             width: 75%;
-            margin-bottom: 6%;
+            margin-bottom:2%;
         }
         h3{
             /*color: #999999;*/
@@ -81,6 +81,20 @@
         #gai{
             margin-top: 100px;
         }
+        #but1{
+            height: 40px;
+            width: 150px;
+            color: white;
+            border: none;
+            font-family: 方正综艺简体;
+            border-radius: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            background-color: rgba(255, 0, 0, 0.65);
+            float: left;
+        }
+
     </style>
 </head>
 <body>
@@ -96,12 +110,15 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="login">
+                <a href="admin_business.html">
+                    <button id="but1">返回管理员业务</button>
+                </a>
                 <h3>增加房间</h3>
                         <form action="/InsertRoomServlet" method="post">
                             <ul>
                                 <li><input type="text" name="id" class="form-control"placeholder="房间编号"></li>
-                                <li><input type="text" name="price" class="form-control" placeholder="房间价格"></li>
-                                <li><input type="text" name="roomType" class="form-control"placeholder="房间类型"></li>
+                                <li><input type="text" name="price" class="form-control" placeholder="房间类型"></li>
+                                <li><input type="text" name="roomType" class="form-control"placeholder="房间价格"></li>
                                 <li class="li_last"><input type="submit" class="but"> </li>
                             </ul>
 
@@ -126,8 +143,8 @@
                 <form action="/UpdateRoomServlet" method="post">
                     <ul>
                         <li><input type="text" name="id" class="form-control"placeholder="房间编号"></li>
-                        <li><input type="text" name="price" class="form-control" placeholder="修改房间价格"></li>
-                        <li><input type="text" name="roomType" class="form-control"placeholder="修改房间类型"></li>
+                        <li><input type="text" name="price" class="form-control" placeholder="修改房间类型"></li>
+                        <li><input type="text" name="roomType" class="form-control"placeholder="修改房间价格"></li>
                         <li class="li_last"><input type="submit" class="but"> </li>
                     </ul>
 
