@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 form-box">
 
-                    <form role="form" action="" method="post">
+                    <form role="form" action="/InsertUserServlet" method="post">
 
                             <div class="form-top">
                                 <div class="form-top-left">
@@ -52,26 +52,48 @@
                             </div>
                             <div class="form-bottom">
                                 <div class="form-group">
-                                    <input type="text" name="" placeholder="姓名" class="form-first-name form-control" id="form-first-name">
+                                    <input type="text" name="name" placeholder="姓名" class="form-first-name form-control" id="form-first-name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" placeholder="身份证号" class="form-last-name form-control" id="form-last-name">
+                                    <input type="text" name="IDNum" placeholder="身份证号" class="form-last-name form-control" id="form-last-name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" placeholder="账号" class="form-email form-control" id="form-email">
+                                    <input type="text" name="account" placeholder="账号" class="form-email form-control" id="form-email">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="" placeholder="密码" class="form-password form-control" id="form-password">
+                                    <input type="password" name="password" placeholder="密码" class="form-password form-control" id="form-password">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="" placeholder="再次确认密码" class="form-repeat-password form-control" id="form-repeat-password">
+                                    <input type="password"  placeholder="再次确认密码" onkeyup="validate()" class="form-repeat-password form-control" id="form-repeat-password">
+
+                                </div>
+                                <div id="tishi">
+
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="" placeholder="联系电话 这个最重要~" class="form-google-plus form-control" id="form-google-plus">
+                                    <input type="text" name="phoneNum" placeholder="联系电话 这个最重要~" class="form-google-plus form-control" id="form-google-plus">
+
                                 </div>
-                                <button type="submit" class="btn">注册完成</button>
+                                <button type="submit" id="submit" class="btn">注册完成</button>
                             </div>
                     </form>
+                    <script>
+                        function validate() {
+                            var pwd1=document.getElementById('form-password').value;
+                            var  pwd2=document.getElementById('form-repeat-password').value;
+                            if( pwd1 === pwd2) {
+                                document.getElementById("tishi").innerHTML="<font color='green'>两次密码相同</font>";
+                                document.getElementById("submit").disabled = false;
+                            }
+                            else {
+                                document.getElementById("tishi").innerHTML="<font color='red'>两次密码不相同</font>";
+                                document.getElementById("submit").disabled = true;
+                            }
+
+
+                        }
+                    </script>
+
 
                 </div>
             </div>
