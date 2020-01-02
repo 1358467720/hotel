@@ -13,12 +13,18 @@ public class UserDao {
 
     public static int insertUser(User insertUser){
         String sql = "insert into Huser values(?,?,?,?,?,?)";
-        int update = jdbcTemplate.update(sql, insertUser.getAccount(),
-                insertUser.getPassword(),
-                insertUser.getName(),
-                insertUser.getSex(),
-                insertUser.getIDNum(),
-                insertUser.getPhoneNum());
+        int update = 0;
+        try {
+            update = jdbcTemplate.update(sql, insertUser.getAccount(),
+                    insertUser.getPassword(),
+                    insertUser.getName(),
+                    insertUser.getSex(),
+                    insertUser.getIDNum(),
+                    insertUser.getPhoneNum());
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return 0;
+        }
 
         return update;
     }
