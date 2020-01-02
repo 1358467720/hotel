@@ -1,3 +1,4 @@
+
 package cn.hotal.dao;
 
 import cn.hotal.bean.Admin;
@@ -53,3 +54,4 @@ public class AdminDao {
 
 
 }
+

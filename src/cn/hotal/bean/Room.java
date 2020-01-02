@@ -1,3 +1,4 @@
+
 package cn.hotal.bean;
 
 public class Room {
@@ -38,3 +39,4 @@ public class Room {
                 '}';
     }
 }
+

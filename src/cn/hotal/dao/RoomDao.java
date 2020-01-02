@@ -1,3 +1,4 @@
+
 package cn.hotal.dao;
 
 import cn.hotal.bean.Room;
@@ -62,3 +63,4 @@ public class RoomDao {
         }
     }
 }
+
