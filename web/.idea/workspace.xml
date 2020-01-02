@@ -15,6 +15,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1V0tkGDIsCwsGtjPazMrZ5jzZv0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
@@ -24,7 +27,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.splitter.proportion" value="0.24107143" />
   </component>
   <component name="RecentsManager">
     <key name="OPEN_URL_DIALOG">
@@ -79,7 +83,8 @@
       <workItem from="1577758644378" duration="11233000" />
       <workItem from="1577799063049" duration="5772000" />
       <workItem from="1577805655058" duration="865000" />
-      <workItem from="1577806576277" duration="3667000" />
+      <workItem from="1577806576277" duration="3883000" />
+      <workItem from="1577954897598" duration="1064000" />
     </task>
     <servers />
   </component>
