@@ -1,18 +1,103 @@
-
 <%@ page import="org.springframework.jdbc.core.JdbcTemplate" %>
 <%@ page import="cn.hotal.utils.JDBCUtils" %>
-<%@ page import="java.util.Map" %>
-<%@ page import="org.springframework.dao.DataAccessException" %><%--
+<%@ page import="java.util.Map" %><%--
   Created by IntelliJ IDEA.
   User: songHat
   Date: 2020/1/2
   Time: 16:26
   To change this template use File | Settings | File Templates.
 --%>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+
+
+<!doctype html>
+<html lang="en">
+<title>住宿信息管理</title>
 <head>
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="css/styles.css">
+    <link >
+    <style>
+        body{
+            background-color:rgb(202,240,211) ;
+        }
+        a {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            border-radius: 50px;
+
+            text-decoration: none;
+            color: initial;
+            width: 75%;
+            margin-bottom: 6%;
+        }
+        h3{
+            /*color: #999999;*/
+        }
+        ul{
+            padding:0px;
+        }
+        li{
+            list-style: none;
+            margin-bottom: 20px;
+            font-family: 微软雅黑;
+        }
+        .but{
+            height: 40px;
+            width: 100px;
+            color: white;
+            border: none;
+            background-color: rgb(181, 218, 190);
+            font-family: 方正综艺简体;
+            border-radius: 5px;
+        }
+        #but{
+            background-color: rgba(255, 0, 0, 0.53);
+        }
+        .box{
+            width: 40%;
+            height: 35px;
+            border: #999999 solid 1px;
+            border-radius: 5px;
+
+        }
+        .folat{
+            float: left;
+        }
+        .folat1{
+            float: left;
+            margin-left: 50%;
+            clear: right;
+        }
+        .out{
+            margin-top: 20px;
+            margin-left: 10%;
+            margin-bottom: 20px;
+            width: 80%;
+            border: rgba(153, 153, 153, 0.63) solid 2px;
+            height: 400px;
+        }
+        #whith{
+            width: 50%;
+        }
+        .form-control{
+            /*width: 50%;*/
+        }
+        .login{
+        }
+        #gai{
+            margin-top: 50px;
+        }
+        .top{
+            margin-top: 40px;
+        }
+
+
+    </style>
 </head>
 <body>
 <%
@@ -20,18 +105,35 @@
     JdbcTemplate jdbcTemplate = new JdbcTemplate(JDBCUtils.getDataSouce());
 
     String sql = "select * from Huser where account = ?";
-    Map<String, Object> map = null;
-    try {
-        map = jdbcTemplate.queryForMap(sql,account);
-    } catch (DataAccessException e) {
-        e.printStackTrace();
-        out.write("未存在该用户，请重试!");
-    }
+    Map<String, Object> map = jdbcTemplate.queryForMap(sql,account);
 %>
 
-<P>account:<%=map.get("account")%></P>
-<P>password:<%=map.get("password")%></P>
-<P>name:<%=map.get("name")%></P>
+
+<div id="login-bg" class="container-fluid">
+
+    <div class="bg-img"></div>
+    <div class="bg-color"></div>
+</div>
+
+<div class="container" id="login">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="login">
+                <div class="out">
+                    <ul>
+                        <li class="top">account:<%=map.get("account")%></li>
+                        <li>password:<%=map.get("password")%></li>
+                        <li>name:<%=map.get("name")%></li>
+                        <li>sex:<%=map.get("sex")%></li>
+                        <li>phoneNum:<%=map.get("phoneNum")%></li>
+                        <li>IDNum:<%=map.get("IDNum")%></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
-
